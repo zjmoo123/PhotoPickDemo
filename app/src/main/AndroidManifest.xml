@@ -20,17 +20,14 @@
         android:required="true" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".bledemo.BLEActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".LoginActivity">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.mob.tools.MobUIShell"
@@ -81,12 +78,25 @@
         <activity android:name=".login.RegisterPage" />
         <activity android:name=".Login2Activity" />
         <activity android:name=".login.RegActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".bledemo.BLEActivity" />
         <activity android:name=".SwitchActivity" />
         <activity android:name=".NotificationActivity" />
         <activity android:name=".blechat.DeviceListActivity" />
         <activity android:name=".GridViewActivity" />
-        <activity android:name=".blechat.BluetoothChat"></activity>
+        <activity android:name=".blechat.BluetoothChat" />
+
+        <service
+            android:name=".bledemo.BluetoothService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".dbflow.DBFlowActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

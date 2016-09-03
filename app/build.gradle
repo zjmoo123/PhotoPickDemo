@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.neenbedankt.android-apt'
+def dbflow_version = "3.0.0-beta4"
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
@@ -21,12 +22,19 @@ android {
         checkReleaseBuilds false
         abortOnError false
     }
+
+
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.0.0'
+
+    apt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
+
 
     compile files('libs/MobCommons-2016.0707.1708.jar')
     compile files('libs/MobTools-2016.0707.1708.jar')
@@ -69,4 +77,7 @@ dependencies {
     compile files('libs/ShareSDK-Yixin-Moments-2.7.4.jar')
     compile files('libs/ShareSDK-YouDao-2.7.4.jar')
     compile files('libs/ShareSDK-Wechat-2.7.4.jar')
-    compile 'me.xiaopan:switchbutton:1.2.0'}
+    compile 'me.xiaopan:switchbutton:1.2.0'
+    compile 'com.google.code.gson:gson:2.7'
+
+}

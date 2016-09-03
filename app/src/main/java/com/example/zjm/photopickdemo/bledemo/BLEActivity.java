@@ -122,7 +122,7 @@ public class BLEActivity extends AppCompatActivity {
 
                         mBluetoothAdapter.stopLeScan(mLeScanCallback);
 
-
+                        Toast.makeText(BLEActivity.this, "时间到，扫描完成", Toast.LENGTH_SHORT).show();
 
                     }
 

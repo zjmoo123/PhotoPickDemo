@@ -88,7 +88,7 @@ public class RegisterPage extends Activity implements OnClickListener, Callback{
 		findViewById(R.id.ll_back).setOnClickListener(this);
         Bundle bundle = getIntent().getExtras();
         Serializable data = bundle.getSerializable("hash");
-        Log.i("Register_token","bundile"+String.valueOf(data));
+        Log.i("Register_token","bundle"+String.valueOf(data));
         if (data != null) {
             HashMap<String, Object>   table = (HashMap<String, Object>)data;
             Log.i("Register_token","hasgmap"+String.valueOf(table));
