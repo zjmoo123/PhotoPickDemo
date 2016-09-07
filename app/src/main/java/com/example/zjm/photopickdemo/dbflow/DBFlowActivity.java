@@ -7,6 +7,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.zjm.photopickdemo.R;
+import com.example.zjm.photopickdemo.callbackTest.Callback;
+import com.example.zjm.photopickdemo.callbackTest.Callback2;
+import com.example.zjm.photopickdemo.callbackTest.CallbackTest;
+import com.example.zjm.photopickdemo.callbackTest.Li;
+import com.example.zjm.photopickdemo.callbackTest.Wang;
 import com.raizlabs.android.dbflow.runtime.transaction.process.ProcessModelInfo;
 import com.raizlabs.android.dbflow.runtime.transaction.process.SaveModelTransaction;
 import com.raizlabs.android.dbflow.sql.language.Select;
@@ -18,6 +23,7 @@ public class DBFlowActivity extends AppCompatActivity implements View.OnClickLis
     private static final String TAG=DBFlowActivity.class.getSimpleName();
     private Button add;
     private Button search;
+    private Button callback_bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +32,10 @@ public class DBFlowActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_dbflow);
         add=(Button)findViewById(R.id.add);
         search=(Button)findViewById(R.id.search);
+        callback_bt=(Button)findViewById(R.id.callback);
         add.setOnClickListener(this);
         search.setOnClickListener(this);
+        callback_bt.setOnClickListener(this);
     }
 
     @Override
@@ -51,6 +59,24 @@ public class DBFlowActivity extends AppCompatActivity implements View.OnClickLis
                 for (int i=0;i<=10;i++){
                     Log.e(TAG,peoples2.get(i).email);
                 }
+                break;
+            case R.id.callback:
+                Li li=new Li();
+                Wang wang=new Wang(li);
+                wang.askQuestion("1+1等于几");
+                CallbackTest callbackTest=new CallbackTest();
+                callbackTest.setCallback(wang.getCallback()  );
+                callbackTest.test();
+                callbackTest.setCallback(new Callback() {
+                    @Override
+                    public void solve(String result) {
+                        Log.e("TAG","直接实现");
+                    }
+                });
+                callbackTest.test();
+                break;
+            default:
+                break;
         }
     }
 }

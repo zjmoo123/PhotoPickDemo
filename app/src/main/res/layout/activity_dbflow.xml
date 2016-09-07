@@ -19,5 +19,11 @@
         android:text="cha找"
         android:id="@+id/search"
         android:layout_below="@+id/add"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试回调"
+        android:id="@+id/callback"
+        android:layout_below="@+id/search"/>
 
 </RelativeLayout>
