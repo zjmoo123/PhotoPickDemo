@@ -25,5 +25,16 @@
         android:text="测试回调"
         android:id="@+id/callback"
         android:layout_below="@+id/search"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toView"
+        android:text="去view"
+        android:layout_below="@+id/callback"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/bg"
+        android:layout_below="@+id/toView"/>
 
 </RelativeLayout>
