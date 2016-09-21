@@ -93,11 +93,7 @@
             android:exported="true" />
 
         <activity android:name=".dbflow.DBFlowActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".contentprovider.ContentProviderActivity" />
         <activity android:name=".view.ShowActivity" />
@@ -109,8 +105,29 @@
                 <action android:name="com.example.broadcast.FORCE_EXIT" />
             </intent-filter>
         </receiver>
+        <receiver android:name=".broadcast.Receiver1">
+            <intent-filter android:priority="1000">
+                <action android:name="com.yin.test1broadcast"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast.Receiver2">
+            <intent-filter android:priority="500">
+                <action android:name="com.yin.testbroadcast2"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast.Receiver3">
+            <intent-filter android:priority="100">
+                <action android:name="com.yin.testbroadcast2"/>
+            </intent-filter>
+        </receiver>
 
-        <activity android:name=".broadcast.BroadcastActivity"></activity>
+        <activity android:name=".broadcast.BroadcastActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
