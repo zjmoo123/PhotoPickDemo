@@ -8,10 +8,29 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.zjm.photopickdemo.contentprovider.ContentProviderActivity">
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_edit"
+        android:hint="name"/>
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/phone_edit"
+        android:layout_toRightOf="@+id/name_edit"
+        android:hint="phonenumber"
+        android:numeric="integer"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/insert_people"
+        android:text="插入新联系人"
+        android:layout_below="@+id/name_edit"/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/people">
+        android:id="@+id/people"
+        android:layout_below="@+id/insert_people">
 
     </ListView>
 </RelativeLayout>
