@@ -31,6 +31,12 @@
         android:id="@+id/toView"
         android:text="去view"
         android:layout_below="@+id/callback"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="退出"
+        android:id="@+id/force_exit"
+        android:layout_toRightOf="@+id/toView"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

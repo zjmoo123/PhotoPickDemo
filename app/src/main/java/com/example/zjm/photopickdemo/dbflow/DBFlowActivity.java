@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.zjm.photopickdemo.R;
+import com.example.zjm.photopickdemo.base.ActivityController;
 import com.example.zjm.photopickdemo.callbackTest.Callback;
 import com.example.zjm.photopickdemo.callbackTest.Callback2;
 import com.example.zjm.photopickdemo.callbackTest.CallbackTest;
@@ -28,20 +29,24 @@ public class DBFlowActivity extends AppCompatActivity implements View.OnClickLis
     private Button search;
     private Button callback_bt;
     private Button toView;
+    private Button mForceExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_dbflow);
+        ActivityController.addActivity(this);
+        ActivityController.setCurrentActivity(this);
         add = (Button) findViewById(R.id.add);
         search = (Button) findViewById(R.id.search);
         callback_bt = (Button) findViewById(R.id.callback);
-        toView=(Button)findViewById(R.id.toView);
+        toView = (Button) findViewById(R.id.toView);
+        mForceExit = (Button) findViewById(R.id.force_exit);
         add.setOnClickListener(this);
         search.setOnClickListener(this);
         callback_bt.setOnClickListener(this);
         toView.setOnClickListener(this);
+        mForceExit.setOnClickListener(this);
     }
 
     @Override
@@ -84,6 +89,11 @@ public class DBFlowActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.toView:
                 startActivity(new Intent(DBFlowActivity.this, RoundImageActivity.class));
                 finish();
+                break;
+            case R.id.force_exit://发送广播 
+                Intent intent = new Intent("com.example.broadcast.FORCE_EXIT");
+                sendBroadcast(intent);
+                break;
             default:
                 break;
         }
