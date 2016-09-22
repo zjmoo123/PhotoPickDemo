@@ -79,5 +79,4 @@ dependencies {
     compile files('libs/ShareSDK-Wechat-2.7.4.jar')
     compile 'me.xiaopan:switchbutton:1.2.0'
     compile 'com.google.code.gson:gson:2.7'
-
 }

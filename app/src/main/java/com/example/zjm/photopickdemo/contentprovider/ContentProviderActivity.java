@@ -44,9 +44,9 @@ public class ContentProviderActivity extends AppCompatActivity {
                 insertPeople();
             }
         });
-        testReadAllContacts();
-        getContactsList();
-
+//        testReadAllContacts();
+//        getContactsList();
+        searchUser();
         mContactsAdapter = new ContactsAdapter(mContactsList, R.layout.contacts_item, this);
         mContactsListView.setAdapter(mContactsAdapter);
     }
@@ -106,7 +106,8 @@ public class ContentProviderActivity extends AppCompatActivity {
                 name = cur.getString(cur.getColumnIndex(Contacts.People.NAME));
                 phoneNo = cur.getString(cur.getColumnIndex(Contacts.People.NUMBER));
                 mContactsList.add(new PeopleContact(name, phoneNo));
-                Toast.makeText(this, name + " " + phoneNo, Toast.LENGTH_LONG).show();
+               // Toast.makeText(this, name + " " + phoneNo, Toast.LENGTH_LONG).show();
+                Log.i(TAG,name + " " + phoneNo);
             } while (cur.moveToNext());
         }
     }
@@ -151,10 +152,13 @@ public class ContentProviderActivity extends AppCompatActivity {
             return mobiles.matches(telRegex);
     }
 
+    /**
+     * 增加联系人
+     */
     public void insertPeople() {
-        String name=mName.getText().toString();
-        String phone=mPhone.getText().toString();
-        if ((!name.isEmpty())&&isMobileNO(phone)){
+        String name = mName.getText().toString();
+        String phone = mPhone.getText().toString();
+        if ((!name.isEmpty()) && isMobileNO(phone)) {
             //创建一个空的contentvalues
             ContentValues values = new ContentValues();
             //向rawContentUri 插入一个空值，获取返回的rawContactId
@@ -177,8 +181,14 @@ public class ContentProviderActivity extends AppCompatActivity {
             values.put(ContactsContract.CommonDataKinds.Phone.TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE);
 
             getContentResolver().insert(ContactsContract.Data.CONTENT_URI, values);
-        }else{
-            Toast.makeText(this,"请输入正确的手机号和联系人",Toast.LENGTH_LONG);
+            PeopleContact peopleContact = new PeopleContact();
+            peopleContact.name = name;
+            peopleContact.phoneNo = phone;
+            mContactsList.add(peopleContact);
+            mContactsAdapter.notifyDataSetChanged();
+            Toast.makeText(this, "添加成功", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "请输入正确的手机号和联系人", Toast.LENGTH_SHORT).show();
         }
 
 
