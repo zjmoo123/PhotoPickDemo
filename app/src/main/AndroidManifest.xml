@@ -94,14 +94,14 @@
             android:exported="true" />
 
         <activity android:name=".dbflow.DBFlowActivity">
-
-        </activity>
-        <activity android:name=".contentprovider.ContentProviderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".contentprovider.ContentProviderActivity">
+
         </activity>
         <activity android:name=".view.ShowActivity" />
         <activity android:name=".view.RoundImageActivity" />

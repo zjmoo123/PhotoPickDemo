@@ -19,7 +19,8 @@
         android:id="@+id/phone_edit"
         android:layout_toRightOf="@+id/name_edit"
         android:hint="phonenumber"
-        android:numeric="integer"/>
+        android:numeric="integer"
+        android:maxLength="11"/>
 
     <ListView
         android:layout_width="match_parent"

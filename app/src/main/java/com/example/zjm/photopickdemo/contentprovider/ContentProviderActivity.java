@@ -1,5 +1,6 @@
 package com.example.zjm.photopickdemo.contentprovider;
 
+import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -37,7 +38,7 @@ public class ContentProviderActivity extends AppCompatActivity {
         mContactsListView = (ListView) findViewById(R.id.people);
         mInsertPeople = (Button) findViewById(R.id.insert_people);
         mName = (EditText) findViewById(R.id.name_edit);
-        mPhone = (EditText) findViewById(R.id.phone_edit);
+        mPhone = (EditText) findViewById(R.id.phone_edit);//l
         mInsertPeople.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,23 +117,27 @@ public class ContentProviderActivity extends AppCompatActivity {
      * 查询联系人
      */
     private void searchUser() {
-        //定义两个list来放数据
-
+        ContentResolver resolver = ContentProviderActivity.this.getContentResolver();
+        Cursor phoneCursor = resolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, new String[]{ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,ContactsContract.CommonDataKinds.Phone.NUMBER, "sort_key"},null , null, "sort_key COLLATE LOCALIZED ASC");
+        //ContactsContract.CommonDataKinds.Phone.NUMBER, "sort_key"}
+        //"sort_key COLLATE LOCALIZED ASC"
         //获取Cursor
-        Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
-        while (phones.moveToNext()) {
+     //   Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+        while (phoneCursor.moveToNext()) {
             //拿到name 和电话号码
-            String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-            String phonename = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+            String phoneNumber = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+            String phonename = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+            Log.i(TAG,phonename + " " + phoneNumber);
             //如果是一个正常的手机号码，则添加到列表中
-            if (isMobileNO(phoneNumber)) {//如果是电话，则添加到list中。
-                PeopleContact peopleContact = new PeopleContact();
-                peopleContact.name = phonename;
-                peopleContact.phoneNo = phoneNumber;
-                mContactsList.add(peopleContact);
-            }
+//            if (isMobileNO(phoneNumber)) {//如果是电话，则添加到list中。
+//
+//            }
+            PeopleContact peopleContact = new PeopleContact();
+            peopleContact.name = phonename;
+            peopleContact.phoneNo = phoneNumber.replace(" ","");
+            mContactsList.add(peopleContact);
         }
-        phones.close();
+        phoneCursor.close();
     }
 
 
@@ -181,6 +186,7 @@ public class ContentProviderActivity extends AppCompatActivity {
             values.put(ContactsContract.CommonDataKinds.Phone.TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE);
 
             getContentResolver().insert(ContactsContract.Data.CONTENT_URI, values);
+            Log.i(TAG,"charu "+name + " " + phone);
             PeopleContact peopleContact = new PeopleContact();
             peopleContact.name = name;
             peopleContact.phoneNo = phone;

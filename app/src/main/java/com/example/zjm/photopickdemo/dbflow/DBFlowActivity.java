@@ -1,11 +1,18 @@
 package com.example.zjm.photopickdemo.dbflow;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.PixelFormat;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.zjm.photopickdemo.R;
 import com.example.zjm.photopickdemo.base.ActivityController;
@@ -14,6 +21,7 @@ import com.example.zjm.photopickdemo.callbackTest.Callback2;
 import com.example.zjm.photopickdemo.callbackTest.CallbackTest;
 import com.example.zjm.photopickdemo.callbackTest.Li;
 import com.example.zjm.photopickdemo.callbackTest.Wang;
+import com.example.zjm.photopickdemo.view.HiveDrawable;
 import com.example.zjm.photopickdemo.view.RoundImageActivity;
 import com.example.zjm.photopickdemo.view.ShowActivity;
 import com.raizlabs.android.dbflow.runtime.transaction.process.ProcessModelInfo;
@@ -30,6 +38,7 @@ public class DBFlowActivity extends AppCompatActivity implements View.OnClickLis
     private Button callback_bt;
     private Button toView;
     private Button mForceExit;
+    private ImageView mHiveImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +51,8 @@ public class DBFlowActivity extends AppCompatActivity implements View.OnClickLis
         callback_bt = (Button) findViewById(R.id.callback);
         toView = (Button) findViewById(R.id.toView);
         mForceExit = (Button) findViewById(R.id.force_exit);
+        mHiveImage=(ImageView)findViewById(R.id.hive_image);
+        mHiveImage.setImageDrawable(new HiveDrawable(ContextCompat.getDrawable(this,R.mipmap.bg)));
         add.setOnClickListener(this);
         search.setOnClickListener(this);
         callback_bt.setOnClickListener(this);
@@ -98,4 +109,5 @@ public class DBFlowActivity extends AppCompatActivity implements View.OnClickLis
                 break;
         }
     }
+
 }
