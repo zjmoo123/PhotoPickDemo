@@ -13,4 +13,11 @@
         <attr name="type" />
     </declare-styleable>
 
+    <declare-styleable name="TabSelectorLayout">
+        <attr name="drawablePadding" format="dimension"/> <!-- drawable和text之间的距离 -->
+        <attr name="normalTextColor" format="color"/> <!-- 自然状态下文字颜色 -->
+        <attr name="selectTextColor" format="color"/> <!-- 选中状态下文字颜色 -->
+        <attr name="android:textSize"/> <!-- 文字大小 -->
+    </declare-styleable>
+
 </resources>

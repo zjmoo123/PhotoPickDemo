@@ -43,5 +43,11 @@
         android:src="@mipmap/bg"
         android:layout_below="@+id/toView"
         android:id="@+id/hive_image"/>
+    <com.lypeer.googleioclock.GoogleClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hive_image">
+
+    </com.lypeer.googleioclock.GoogleClock>
 
 </RelativeLayout>

@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.zjm.photopickdemo"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -79,4 +79,5 @@ dependencies {
     compile files('libs/ShareSDK-Wechat-2.7.4.jar')
     compile 'me.xiaopan:switchbutton:1.2.0'
     compile 'com.google.code.gson:gson:2.7'
+    compile 'com.github.lypeer:GoogleClock:1.0.0'//SDK21以上
 }

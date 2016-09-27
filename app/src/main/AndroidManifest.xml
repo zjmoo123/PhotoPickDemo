@@ -18,7 +18,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -94,15 +94,9 @@
             android:exported="true" />
 
         <activity android:name=".dbflow.DBFlowActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".contentprovider.ContentProviderActivity">
 
         </activity>
+        <activity android:name=".contentprovider.ContentProviderActivity" />
         <activity android:name=".view.ShowActivity" />
         <activity android:name=".view.RoundImageActivity" />
         <activity android:name=".base.BaseActivity" />
@@ -114,22 +108,28 @@
         </receiver>
         <receiver android:name=".broadcast.Receiver1">
             <intent-filter android:priority="1000">
-                <action android:name="com.yin.test1broadcast"/>
+                <action android:name="com.yin.test1broadcast" />
             </intent-filter>
         </receiver>
         <receiver android:name=".broadcast.Receiver2">
             <intent-filter android:priority="500">
-                <action android:name="com.yin.testbroadcast2"/>
+                <action android:name="com.yin.testbroadcast2" />
             </intent-filter>
         </receiver>
         <receiver android:name=".broadcast.Receiver3">
             <intent-filter android:priority="100">
-                <action android:name="com.yin.testbroadcast2"/>
+                <action android:name="com.yin.testbroadcast2" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".broadcast.BroadcastActivity">
+        <activity android:name=".broadcast.BroadcastActivity" />
+        <activity android:name=".longconnect.ConnectActivity" />
+        <activity android:name=".wechatTab.TabSelectorLayoutDemo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
