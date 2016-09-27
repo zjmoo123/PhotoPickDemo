@@ -24,4 +24,8 @@
     <string name="secure_connect">Connect a device - Secure</string>
     <string name="insecure_connect">Connect a device - Insecure</string>
     <string name="discoverable">Make discoverable</string>
+
+
+    <string name="navigation_drawer_open" translatable="false">close drawer</string>
+    <string name="navigation_drawer_close" translatable="false">open drawer</string>
 </resources>

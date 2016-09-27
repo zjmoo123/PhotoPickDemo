@@ -93,9 +93,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".dbflow.DBFlowActivity">
-
-        </activity>
+        <activity android:name=".dbflow.DBFlowActivity" />
         <activity android:name=".contentprovider.ContentProviderActivity" />
         <activity android:name=".view.ShowActivity" />
         <activity android:name=".view.RoundImageActivity" />
@@ -124,13 +122,18 @@
 
         <activity android:name=".broadcast.BroadcastActivity" />
         <activity android:name=".longconnect.ConnectActivity" />
-        <activity android:name=".wechatTab.TabSelectorLayoutDemo">
+        <activity android:name=".wechatTab.TabSelectorLayoutDemo" />
+        <activity android:name=".statusbarcolor.StatusBarColorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".statusbarcolor.TabActivity" />
+        <activity android:name=".statusbarcolor.TopImageActivity" />
+        <activity android:name=".statusbarcolor.PlanTwoActivity" />
+        <activity android:name=".statusbarcolor.PlanThreeActivity"></activity>
     </application>
 
 </manifest>
