@@ -37,4 +37,10 @@
         android:text="插入新联系人"
         android:layout_below="@+id/name_edit"
         android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone_edit"
+        android:layout_toRightOf="@+id/insert_people"
+        android:text="自建provide"/>
 </RelativeLayout>
