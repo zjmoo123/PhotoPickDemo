@@ -30,9 +30,11 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.READ_CALENDAR"/>
-    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
-    
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature
         android:name="android.hardware.bluetooth_le"
         android:required="true" />
@@ -136,20 +138,24 @@
         <activity android:name=".broadcast.BroadcastActivity" />
         <activity android:name=".longconnect.ConnectActivity" />
         <activity android:name=".wechatTab.TabSelectorLayoutDemo" />
-        <activity android:name=".statusbarcolor.StatusBarColorActivity"></activity>
+        <activity android:name=".statusbarcolor.StatusBarColorActivity" />
         <activity android:name=".statusbarcolor.TabActivity" />
         <activity android:name=".statusbarcolor.TopImageActivity" />
         <activity android:name=".statusbarcolor.PlanTwoActivity" />
         <activity android:name=".statusbarcolor.PlanThreeActivity" />
         <activity android:name=".runtimepermission.PermissionActivity" />
-        <activity android:name=".tipview.TipViewActivity">
+        <activity android:name=".tipview.TipViewActivity"></activity>
+        <activity android:name=".contentprovider.ProviderActivity" />
+        <activity android:name=".camerasample.CameraActivity">
+
+        </activity>
+        <activity android:name=".camerasample.Camera2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".contentprovider.ProviderActivity"></activity>
     </application>
 
 </manifest>

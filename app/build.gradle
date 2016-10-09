@@ -31,6 +31,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.android.support:design:24.1.1'
+    compile "com.android.support:support-v13:23.4.0"
+    compile "com.android.support:support-v4:23.4.0"
+    compile "com.android.support:cardview-v7:23.4.0"
 
     apt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
@@ -81,4 +84,5 @@ dependencies {
     compile 'me.xiaopan:switchbutton:1.2.0'
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.github.lypeer:GoogleClock:1.0.0'//SDK21以上
+    compile 'com.github.uin3566:AllAngleExpandableButton:v1.0.0'
 }
