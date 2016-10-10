@@ -111,7 +111,9 @@
         <activity android:name=".dbflow.DBFlowActivity" />
         <activity android:name=".contentprovider.ContentProviderActivity" />
         <activity android:name=".view.ShowActivity" />
-        <activity android:name=".view.RoundImageActivity" />
+        <activity android:name=".view.RoundImageActivity">
+
+        </activity>
         <activity android:name=".base.BaseActivity" />
         <!-- 静态注册广播 -->
         <receiver android:name=".broadcast.ForceExitReceiver">
@@ -146,11 +148,10 @@
         <activity android:name=".runtimepermission.PermissionActivity" />
         <activity android:name=".tipview.TipViewActivity" />
         <activity android:name=".contentprovider.ProviderActivity" />
-        <activity android:name=".camerasample.CameraActivity"></activity>
-        <activity android:name=".camerasample.Camera2Activity">
-
-        </activity>
-        <activity android:name=".socket.SocketActivity">
+        <activity android:name=".camerasample.CameraActivity" />
+        <activity android:name=".camerasample.Camera2Activity"></activity>
+        <activity android:name=".socket.SocketActivity"></activity>
+        <activity android:name=".view.BezierActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

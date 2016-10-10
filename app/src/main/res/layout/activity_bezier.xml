@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_bezier"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.zjm.photopickdemo.view.BezierActivity">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/point_layout">
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="p1"
+            android:textSize="10sp"
+            android:id="@+id/p1"/>
+    </RelativeLayout>
+
+    <com.example.zjm.photopickdemo.view.BezierView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/point_layout"
+        android:id="@+id/circle_xin"/>
+
+</RelativeLayout>

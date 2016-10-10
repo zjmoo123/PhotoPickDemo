@@ -14,6 +14,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/round1"
         android:src="@mipmap/bg"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/egg_click"
+        android:layout_toRightOf="@+id/round1"
+        android:text="click"/>
     <com.example.zjm.photopickdemo.view.RoundImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,5 +28,11 @@
         android:layout_below="@+id/round1"
         zjm:borderRadius="20dp"
         zjm:type="round"/>
+    <com.example.zjm.photopickdemo.view.BeiSaiErView
+        android:id="@+id/circle3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/round2"/>
 
 </RelativeLayout>
