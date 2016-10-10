@@ -417,7 +417,6 @@ public class Camera2Fragment extends Fragment
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_camera2, container, false);
     }
-
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         view.findViewById(R.id.picture).setOnClickListener(this);

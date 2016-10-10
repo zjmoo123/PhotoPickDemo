@@ -144,12 +144,13 @@
         <activity android:name=".statusbarcolor.PlanTwoActivity" />
         <activity android:name=".statusbarcolor.PlanThreeActivity" />
         <activity android:name=".runtimepermission.PermissionActivity" />
-        <activity android:name=".tipview.TipViewActivity"></activity>
+        <activity android:name=".tipview.TipViewActivity" />
         <activity android:name=".contentprovider.ProviderActivity" />
-        <activity android:name=".camerasample.CameraActivity">
+        <activity android:name=".camerasample.CameraActivity"></activity>
+        <activity android:name=".camerasample.Camera2Activity">
 
         </activity>
-        <activity android:name=".camerasample.Camera2Activity">
+        <activity android:name=".socket.SocketActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
