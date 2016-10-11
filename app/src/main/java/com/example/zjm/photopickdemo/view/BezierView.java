@@ -52,7 +52,7 @@ public class BezierView extends View {
         mPaint = new Paint();
 
         mPaint.setAntiAlias(true);
-        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(0xFFfe626d);
         mPaint.setStrokeWidth(10);
 
@@ -184,7 +184,7 @@ public class BezierView extends View {
         p1.x = centerX - radius * blackMagic;
         p1.y = centerY - radius;
         p2.x = centerX;
-        p2.y = centerY - radius + 170*time;
+        p2.y = centerY - radius + 150*time;
         p3.x = centerX + radius * blackMagic;
         p3.y = centerY - radius;
         p4.x = centerX + radius;
@@ -222,7 +222,7 @@ public class BezierView extends View {
         mPath.reset();
         mInterpolatedTime = 0;
         MoveAnimation move = new MoveAnimation();
-        move.setDuration(4000);
+        move.setDuration(7000);
         move.setInterpolator(new AccelerateDecelerateInterpolator());
         //move.setRepeatCount(Animation.INFINITE);
         //move.setRepeatMode(Animation.REVERSE);
