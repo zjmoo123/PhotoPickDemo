@@ -8,9 +8,12 @@ import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.zjm.photopickdemo.R;
+import com.example.zjm.photopickdemo.view.CountDownView;
 
 public class SensorActivity extends AppCompatActivity implements SensorEventListener {
     private SensorManager sensorManager;
@@ -27,7 +30,9 @@ public class SensorActivity extends AppCompatActivity implements SensorEventList
     private TextView mGText_y;
     private TextView mGText_z;
     private CameraView cameraView;
+    private CountDownView countDownView;
 
+    private long lastTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,26 @@ public class SensorActivity extends AppCompatActivity implements SensorEventList
         mGText_y=(TextView)findViewById(R.id.y);
         mGText_z=(TextView)findViewById(R.id.z);
         cameraView=(CameraView)findViewById(R.id.camera_view);
+        countDownView=(CountDownView)findViewById(R.id.countDownView);
+
+        countDownView.setCountDownTimerListener(new CountDownView.CountDownTimerListener() {
+            @Override
+            public void onStartCount() {
+                Toast.makeText(getApplicationContext(),"开始计时",Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFinishCount() {
+                Toast.makeText(getApplicationContext(),"计时结束", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        countDownView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                countDownView.start();
+            }
+        });
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         magneticSensor = sensorManager
@@ -57,6 +82,18 @@ public class SensorActivity extends AppCompatActivity implements SensorEventList
                 SensorManager.SENSOR_DELAY_UI);
         sensorManager.registerListener(this, accelerometerSensor,
                 SensorManager.SENSOR_DELAY_UI);
+    }
+
+    //连按两次退出应用程序
+    @Override
+    public void onBackPressed() {
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastTime < 2 * 1000) {
+            super.onBackPressed();
+        } else {
+            Toast.makeText(this, "请再按一次", Toast.LENGTH_SHORT).show();
+            lastTime = currentTime;
+        }
     }
 
     @Override

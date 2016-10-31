@@ -111,7 +111,7 @@
         <activity android:name=".dbflow.DBFlowActivity" />
         <activity android:name=".contentprovider.ContentProviderActivity" />
         <activity android:name=".view.ShowActivity" />
-        <activity android:name=".view.RoundImageActivity"></activity>
+        <activity android:name=".view.RoundImageActivity" />
         <activity android:name=".base.BaseActivity" />
         <!-- 静态注册广播 -->
         <receiver android:name=".broadcast.ForceExitReceiver">
@@ -149,16 +149,19 @@
         <activity android:name=".camerasample.CameraActivity" />
         <activity android:name=".camerasample.Camera2Activity" />
         <activity android:name=".socket.SocketActivity" />
-        <activity android:name=".view.BezierActivity">
+        <activity android:name=".view.BezierActivity" />
+        <activity android:name=".sensor.SensorActivity">
 
         </activity>
-        <activity android:name=".sensor.SensorActivity">
+        <activity android:name=".rxjava.RxjavaActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".lunxun.PollingService" />
     </application>
 
 </manifest>

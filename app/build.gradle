@@ -85,4 +85,15 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.github.lypeer:GoogleClock:1.0.0'//SDK21以上
     compile 'com.github.uin3566:AllAngleExpandableButton:v1.0.0'
+
+    compile 'io.reactivex:rxjava:1.2.1'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    //retrofit相关依赖
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+//okhttp相关依赖
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.orhanobut:logger:1.15'
 }
