@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.example.zjm.photopickdemo.R;
 import com.example.zjm.photopickdemo.lunxun.PollingService;
 import com.example.zjm.photopickdemo.lunxun.PollingUtils;
+import com.orhanobut.logger.Logger;
 
 import rx.Observable;
 import rx.Observer;
@@ -49,6 +50,7 @@ public class RxjavaActivity extends AppCompatActivity {
             @Override
             public void onError(Throwable e) {
                 Toast.makeText(RxjavaActivity.this, "Error!", Toast.LENGTH_SHORT).show();
+                Logger.d("ERROR!");
             }
 
             @Override
@@ -91,12 +93,17 @@ public class RxjavaActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.d("networkrequest","请求失败");
+                        Logger.d("networkrequest","请求失败");
                     }
 
                     @Override
                     public void onNext(HeWeatherBean heWeatherBean) {
-                        Log.d("networkrequest","请求成功");
+                        Logger.d("networkrequest  %s","请求成功");
+                        Logger.e("hello");
+                        Logger.w("hello");
+                        Logger.v("hello");
+                        Logger.wtf("hello");
+                        Logger.t("   nihao ceshi   ").d("hello");
                     }
                 });
     }

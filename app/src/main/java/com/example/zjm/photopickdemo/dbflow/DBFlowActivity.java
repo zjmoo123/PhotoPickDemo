@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
+import android.os.Environment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,10 +25,13 @@ import com.example.zjm.photopickdemo.callbackTest.Wang;
 import com.example.zjm.photopickdemo.view.HiveDrawable;
 import com.example.zjm.photopickdemo.view.RoundImageActivity;
 import com.example.zjm.photopickdemo.view.ShowActivity;
+import com.raizlabs.android.dbflow.config.FlowManager;
 import com.raizlabs.android.dbflow.runtime.transaction.process.ProcessModelInfo;
 import com.raizlabs.android.dbflow.runtime.transaction.process.SaveModelTransaction;
 import com.raizlabs.android.dbflow.sql.language.Select;
+import com.tencent.tinker.lib.tinker.TinkerInstaller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +48,7 @@ public class DBFlowActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dbflow);
+      //  FlowManager.init(this);
         ActivityController.addActivity(this);
         ActivityController.setCurrentActivity(this);
         add = (Button) findViewById(R.id.add);
@@ -96,6 +101,14 @@ public class DBFlowActivity extends AppCompatActivity implements View.OnClickLis
                     }
                 });
                 callbackTest.test();
+                String patchPath  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/patch_signed_7zip.apk";
+                File file = new File(patchPath);
+                if (file.exists()) {
+                    Log.v(TAG,"补丁文件存在");
+                    TinkerInstaller.onReceiveUpgradePatch(getApplicationContext(), patchPath);
+                } else {
+                    Log.v(TAG,"补丁文件不存在");
+                }
                 break;
             case R.id.toView:
                 startActivity(new Intent(DBFlowActivity.this, RoundImageActivity.class));

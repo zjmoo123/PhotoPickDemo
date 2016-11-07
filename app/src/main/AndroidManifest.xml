@@ -108,7 +108,13 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".dbflow.DBFlowActivity" />
+        <activity android:name=".dbflow.DBFlowActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".contentprovider.ContentProviderActivity" />
         <activity android:name=".view.ShowActivity" />
         <activity android:name=".view.RoundImageActivity" />
@@ -154,11 +160,7 @@
 
         </activity>
         <activity android:name=".rxjava.RxjavaActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <service android:name=".lunxun.PollingService" />
