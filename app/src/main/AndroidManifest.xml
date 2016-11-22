@@ -91,8 +91,14 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Main2Activity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PhotoPickActivity" />
         <activity android:name=".login.RegisterPage" />
         <activity android:name=".Login2Activity" />
         <activity android:name=".login.RegActivity" />
@@ -109,11 +115,7 @@
             android:exported="true" />
 
         <activity android:name=".dbflow.DBFlowActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".contentprovider.ContentProviderActivity" />
         <activity android:name=".view.ShowActivity" />

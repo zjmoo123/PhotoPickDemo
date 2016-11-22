@@ -1,5 +1,9 @@
 package com.example.zjm.photopickdemo.socket;
 
+import android.content.Context;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -80,4 +84,5 @@ public class TcpSocketClient {
         // 清除输入框内容
         void clearInputContent();
     }
+
 }

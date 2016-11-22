@@ -14,7 +14,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class Main2Activity extends Activity  {
+public class PhotoPickActivity extends Activity  {
 
     private Button btn1,btn2;
     private ImageView img;

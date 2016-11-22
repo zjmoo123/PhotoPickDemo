@@ -30,6 +30,9 @@ public class TcpSocketServer {
     public static void main(String[] args) {
         new TcpSocketServer();//启动tcp套接字服务
     }
+    public static void startService(){
+        new TcpSocketServer();
+    }
 
 
     public TcpSocketServer() {
