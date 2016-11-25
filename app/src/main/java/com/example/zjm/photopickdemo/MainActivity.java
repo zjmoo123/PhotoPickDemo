@@ -1,15 +1,11 @@
 package com.example.zjm.photopickdemo;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 
 import com.example.zjm.photopickdemo.dbflow.DBFlowActivity;
@@ -18,12 +14,11 @@ import com.example.zjm.photopickdemo.sensor.SensorActivity;
 import com.example.zjm.photopickdemo.socket.SocketActivity;
 import com.example.zjm.photopickdemo.statusbarcolor.StatusBarColorActivity;
 import com.example.zjm.photopickdemo.tipview.TipViewActivity;
-import com.example.zjm.photopickdemo.view.BeiSaiErView;
+
+import com.example.zjm.photopickdemo.vedioplayer.VideoActivity;
 import com.example.zjm.photopickdemo.view.BezierActivity;
 import com.example.zjm.photopickdemo.wechatTab.TabSelectorLayoutDemo;
 import com.orhanobut.logger.Logger;
-
-import java.io.File;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mPhotoPickBtn;
@@ -38,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mSocketBtn;
     private Button mSensorBtn;
     private Button mDBFlowBtn;
+    private Button mVideoBtn;
 
 
     @Override
@@ -62,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSocketBtn.setOnClickListener(this);
         mSensorBtn.setOnClickListener(this);
         mDBFlowBtn.setOnClickListener(this);
+        mVideoBtn.setOnClickListener(this);
     }
 
     private void initView() {
@@ -77,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSocketBtn = (Button) findViewById(R.id.socket_button);
         mSensorBtn = (Button) findViewById(R.id.sensor_button);
         mDBFlowBtn = (Button) findViewById(R.id.dbflow_button);
+        mVideoBtn = (Button) findViewById(R.id.video_activity_button);
     }
 
     @Override
@@ -124,6 +122,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.dbflow_button:
                 startActivity(new Intent(this, DBFlowActivity.class));
+                break;
+            case R.id.video_activity_button:
+                startActivity(new Intent(this, VideoActivity.class));
                 break;
         }
     }

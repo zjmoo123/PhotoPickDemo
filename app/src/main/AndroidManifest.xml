@@ -91,7 +91,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -114,9 +114,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".dbflow.DBFlowActivity">
-
-        </activity>
+        <activity android:name=".dbflow.DBFlowActivity" />
         <activity android:name=".contentprovider.ContentProviderActivity" />
         <activity android:name=".view.ShowActivity" />
         <activity android:name=".view.RoundImageActivity" />
@@ -158,14 +156,18 @@
         <activity android:name=".camerasample.Camera2Activity" />
         <activity android:name=".socket.SocketActivity" />
         <activity android:name=".view.BezierActivity" />
-        <activity android:name=".sensor.SensorActivity">
-
-        </activity>
-        <activity android:name=".rxjava.RxjavaActivity">
-
-        </activity>
+        <activity android:name=".sensor.SensorActivity" />
+        <activity android:name=".rxjava.RxjavaActivity" />
 
         <service android:name=".lunxun.PollingService" />
+
+        <activity android:name=".runtimepermission.PermissionDemoActivity" />
+        <activity android:name=".vedioplayer.VideoActivity" />
+        <activity android:name=".vedioplayer.VideoSurfaceDemoActivity">
+
+            <!-- android:screenOrientation="landscape" -->
+        </activity>
+        <activity android:name=".vedioplayer.IJKPlayerActivity"></activity>
     </application>
 
 </manifest>

@@ -79,5 +79,12 @@
         android:id="@+id/dbflow_button"
         android:layout_alignParentRight="true"
         android:text="db数据库测试"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/video_activity_button"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/dbflow_button"
+        android:text="视频播放"/>
 
 </RelativeLayout>

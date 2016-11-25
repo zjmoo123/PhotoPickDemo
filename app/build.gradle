@@ -110,6 +110,9 @@ dependencies {
     provided 'com.tencent.tinker:tinker-android-anno:1.7.1'
     compile 'com.android.support:multidex:1.0.1'
 
+    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.7.4'
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.7.4'
+
 }
 def bakPath = file("${buildDir}/bakApk/")
 
