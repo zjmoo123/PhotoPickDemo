@@ -1,0 +1,16 @@
+Executable : /home/zjm/android/android-ndk-r12b/ndk-build
+arguments : 
+NDK_PROJECT_PATH=null
+APP_BUILD_SCRIPT=/home/zjm/android/workspace/PhotoPickDemo/app/src/main/jni/Android.mk
+NDK_APPLICATION_MK=/home/zjm/android/workspace/PhotoPickDemo/app/src/main/jni/Application.mk
+APP_ABI=armeabi
+NDK_ALL_ABIS=armeabi
+NDEBUG=0
+APP_PLATFORM=android-21
+NDK_OUT=/home/zjm/android/workspace/PhotoPickDemo/app/build/intermediates/ndkBuild/release/obj
+NDK_LIBS_OUT=/home/zjm/android/workspace/PhotoPickDemo/app/build/intermediates/ndkBuild/release/lib
+APP_SHORT_COMMANDS=false
+LOCAL_SHORT_COMMANDS=false
+-n
+jvmArgs : 
+

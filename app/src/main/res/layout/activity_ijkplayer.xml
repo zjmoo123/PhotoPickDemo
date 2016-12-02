@@ -4,9 +4,87 @@
     android:id="@+id/activity_ijkplayer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context="com.example.zjm.photopickdemo.vedioplayer.IJKPlayerActivity">
     <SurfaceView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ijkplayer_view"/>
+        android:id="@+id/ijkplayer_view"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/fengmian"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/fengmian"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/start2"
+        android:id="@+id/restart_button"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="visible"/>
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/show_layout"
+        android:visibility="gone"
+        android:background="#10B7B7B7"
+        android:layout_alignParentBottom="true">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/start1"
+            android:id="@+id/media_control"
+            android:layout_centerHorizontal="true"/>
+        <SeekBar
+            android:id="@+id/media_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/time_current"
+            android:layout_toLeftOf="@+id/time"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loading_view"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+        <TextView android:id="@+id/time_current"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingTop="4dip"
+            android:paddingEnd="4dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dip"
+            android:textColor="#ffffff"
+            android:layout_alignParentBottom="true" />
+        <TextView android:id="@+id/time"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingTop="4dip"
+            android:paddingEnd="4dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dip"
+            android:textColor="#ffffff"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
 </RelativeLayout>

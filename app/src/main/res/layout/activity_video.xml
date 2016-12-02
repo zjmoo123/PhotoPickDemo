@@ -17,10 +17,15 @@
         android:id="@+id/mediaplayer"
         android:layout_toRightOf="@+id/video_btn"
         android:text="mediaSurface"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ijkplayer"
+        android:layout_toRightOf="@+id/mediaplayer"
+        android:text="ijkplayer"/>
     <VideoView
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:id="@+id/video_view"
-        android:layout_below="@+id/video_btn"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/video_view" />
 
 </RelativeLayout>

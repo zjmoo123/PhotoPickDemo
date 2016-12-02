@@ -32,6 +32,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -163,11 +164,15 @@
 
         <activity android:name=".runtimepermission.PermissionDemoActivity" />
         <activity android:name=".vedioplayer.VideoActivity" />
-        <activity android:name=".vedioplayer.VideoSurfaceDemoActivity">
+        <activity android:name=".vedioplayer.VideoSurfaceDemoActivity"
+            >
 
             <!-- android:screenOrientation="landscape" -->
         </activity>
-        <activity android:name=".vedioplayer.IJKPlayerActivity"></activity>
+        <activity android:name=".vedioplayer.IJKPlayerActivity"
+            android:configChanges="orientation|screenSize">
+
+        </activity>
     </application>
 
 </manifest>

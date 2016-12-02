@@ -40,9 +40,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.android.support:design:24.1.1'
-    compile "com.android.support:support-v13:23.4.0"
-    compile "com.android.support:support-v4:23.4.0"
-    compile "com.android.support:cardview-v7:23.4.0"
+    compile "com.android.support:support-v13:24.0.0"
+    compile "com.android.support:support-v4:24.0.0"
+    compile "com.android.support:cardview-v7:24.0.0"
 
     apt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
@@ -110,9 +110,15 @@ dependencies {
     provided 'com.tencent.tinker:tinker-android-anno:1.7.1'
     compile 'com.android.support:multidex:1.0.1'
 
-    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.7.4'
-    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.7.4'
+    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.7.5'
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.7.5'
 
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.7.5'
+    compile 'tv.danmaku.ijk.media:ijkplayer-arm64:0.7.5'
+    compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.7.5'
+    compile 'tv.danmaku.ijk.media:ijkplayer-x86_64:0.7.5'
+
+    compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.7.5'
 }
 def bakPath = file("${buildDir}/bakApk/")
 
