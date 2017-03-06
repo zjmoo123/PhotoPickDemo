@@ -26,12 +26,6 @@ android {
         checkReleaseBuilds false
         abortOnError false
     }
-    externalNativeBuild {
-        ndkBuild {
-            path 'src/main/jni/Android.mk'
-        }
-    }
-
 
 }
 
