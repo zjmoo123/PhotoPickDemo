@@ -173,6 +173,9 @@
             android:configChanges="orientation|screenSize">
 
         </activity>
+        <activity android:name=".html.HtmlAnalysisActivity" >
+
+        </activity>
     </application>
 
 </manifest>

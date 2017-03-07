@@ -1,24 +1,21 @@
 package com.example.zjm.photopickdemo;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-
 import com.example.zjm.photopickdemo.dbflow.DBFlowActivity;
-import com.example.zjm.photopickdemo.jniTest.JniUtils;
+import com.example.zjm.photopickdemo.html.HtmlAnalysisActivity;
 import com.example.zjm.photopickdemo.sensor.SensorActivity;
 import com.example.zjm.photopickdemo.socket.SocketActivity;
 import com.example.zjm.photopickdemo.statusbarcolor.StatusBarColorActivity;
 import com.example.zjm.photopickdemo.tipview.TipViewActivity;
-
 import com.example.zjm.photopickdemo.vedioplayer.VideoActivity;
 import com.example.zjm.photopickdemo.view.BezierActivity;
 import com.example.zjm.photopickdemo.wechatTab.TabSelectorLayoutDemo;
-import com.orhanobut.logger.Logger;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mPhotoPickBtn;
@@ -34,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mSensorBtn;
     private Button mDBFlowBtn;
     private Button mVideoBtn;
+    private Button mHtmlAnalysisBtn;
 
 
     @Override
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         initView();
         setListener();
-        Logger.d(new JniUtils().getStringFromC());
+        //  Logger.d(new JniUtils().getStringFromC());
     }
 
     private void setListener() {
@@ -59,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSensorBtn.setOnClickListener(this);
         mDBFlowBtn.setOnClickListener(this);
         mVideoBtn.setOnClickListener(this);
+        mHtmlAnalysisBtn.setOnClickListener(this);
     }
 
     private void initView() {
@@ -75,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSensorBtn = (Button) findViewById(R.id.sensor_button);
         mDBFlowBtn = (Button) findViewById(R.id.dbflow_button);
         mVideoBtn = (Button) findViewById(R.id.video_activity_button);
+        mHtmlAnalysisBtn = (Button) findViewById(R.id.html_analysis_button);
     }
 
     @Override
@@ -126,6 +126,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.video_activity_button:
                 startActivity(new Intent(this, VideoActivity.class));
                 break;
+            case R.id.html_analysis_button:
+                startActivity(new Intent(this, HtmlAnalysisActivity.class));
+
         }
     }
 }
